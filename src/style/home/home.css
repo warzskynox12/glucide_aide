@@ -1,0 +1,13 @@
+.titre-home{
+    position: relative;
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    width: 100vw;
+    margin:30px 0 0 0;
+}
+@media screen and (max-width: 768px) {
+    .titre-home{
+        margin-top: 30px;
+    }
+}
