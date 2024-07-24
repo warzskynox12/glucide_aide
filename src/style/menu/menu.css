@@ -65,9 +65,10 @@ body {
         width: 80%;
         color: black;
         font-size: 20px;
-    }
+    } 
 
     .bouton-menu {
+        padding: 0;
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -75,7 +76,7 @@ body {
         align-items: center;
         width: 50px; 
         height: 50px;
-        top: 10px;
+        top: 30px;
         left: 10px; 
         background-color: transparent;
         border: none; 
@@ -91,7 +92,7 @@ body {
     }
     
     .barre1 {
-        transform: rotate(-45deg) translate(-11px, 11px);
+        transform: rotate(-45deg) translate(-11.5px, 11.5px);
     }
     
     .barre2 {
@@ -99,7 +100,7 @@ body {
     }
     
     .barre3 {
-        transform: rotate(45deg) translate(-11px, -11px);
+        transform: rotate(45deg) translate(-11.5px, -11.5px);
     }
    
     .menu {
