@@ -1,72 +1,118 @@
-.profil{
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-    align-items: center;
-    justify-content: center;
-}
-.sign{
-    justify-content:start;
-}
-.infoutilisateur{
-    grid-area: infoutilisateur;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.infoutilisateurimg{
-    grid-area: infoutilisateurimg;
-    width: 100%;
-}
-.infoutilisateurimg img{
-    border-radius: 50%;
-}
-
-.infoutilisateur, .adressemail,.assogoogle , .mdp, .mnom, .mprofil , .delete, .deconnexion{
-    display: none;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 20px;
-    color: black;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.titre-adressemail, .titre-assogoogle, .titre-mdp, .titre-mnom, .titre-mprofil, .titre-infoutilisateur, .titre-delete, .titre-deconnexion{
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    margin-bottom: 10px;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 20px;
-    color: black;
-    height: auto;
-    cursor: default;
-    user-select: none;
-}
-.adressemail p, .assogoogle p, .mdp p, .mnom p, .mprofil p, .infoutilisateur p , .delete p, .deconnexion p{
-    display: flex;
-    margin: 16px;
-    flex-direction: column;
-    width: 80vw;
-}
-.titre-adressemail p, .titre-assogoogle p, .titre-mdp p, .titre-mnom p, .titre-mprofil p, .titre-infoutilisateur p, .titre-delete p, .titre-deconnexion p{
-    display: flex;
-    margin: 16px;
-    flex-direction: column;
-    width: 80vw;
+@media screen and (min-width: 768px) {
+    .profil{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+    }
+    .infoutilisateur, .adressemail,.assogoogle , .mdp, .mnom, .mprofil , .delete, .deconnexion{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 20px;
+        color: black;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .titre-adressemail, .titre-assogoogle, .titre-mdp, .titre-mnom, .titre-mprofil, .titre-infoutilisateur, .titre-delete, .titre-deconnexion{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        margin-bottom: 10px;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 20px;
+        color: black;
+        height: auto;
+        cursor: default;
+        user-select: none;
+    }
+    .adressemail p, .assogoogle p, .mdp p, .mnom p, .mprofil p, .infoutilisateur p , .delete p, .deconnexion p{
+        display: flex;
+        margin: 16px;
+        flex-direction: column;
+        width: 80vw;
+    }
+    .titre-adressemail p, .titre-assogoogle p, .titre-mdp p, .titre-mnom p, .titre-mprofil p, .titre-infoutilisateur p, .titre-delete p, .titre-deconnexion p{
+        display: flex;
+        margin: 16px;
+        flex-direction: column;
+        width: 80vw;
+    }
 }
 
-.infoutilisateur1{
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:  "infoutilisateurimg infoutilisateurautre";
-    align-items: center;
-    justify-content: center;
+@media screen and (max-width: 768px) {
+    .profil{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        align-items: center;
+        justify-content: center;
+    }
+    .sign{
+        justify-content:start;
+        
+    }
+    .infoutilisateur{
+        grid-area: infoutilisateur;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .infoutilisateurimg{
+        grid-area: infoutilisateurimg;
+        width: 100%;
+    }
+    .infoutilisateurimg img{
+        border-radius: 50%;
+    }
+    
+    .infoutilisateur, .adressemail,.assogoogle , .mdp, .mnom, .mprofil , .delete, .deconnexion{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 20px;
+        color: black;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    
+    .titre-adressemail, .titre-assogoogle, .titre-mdp, .titre-mnom, .titre-mprofil, .titre-infoutilisateur, .titre-delete, .titre-deconnexion{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        margin-bottom: 10px;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 20px;
+        color: black;
+        height: auto;
+        cursor: default;
+        user-select: none;
+    }
+    .adressemail p, .assogoogle p, .mdp p, .mnom p, .mprofil p, .infoutilisateur p , .delete p, .deconnexion p{
+        display: flex;
+        margin: 16px;
+        flex-direction: column;
+        width: 80vw;
+    }
+    .titre-adressemail p, .titre-assogoogle p, .titre-mdp p, .titre-mnom p, .titre-mprofil p, .titre-infoutilisateur p, .titre-delete p, .titre-deconnexion p{
+        display: flex;
+        margin: 16px;
+        flex-direction: column;
+        width: 80vw;
+    }
+    
+    .infoutilisateur1{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:  "infoutilisateurimg infoutilisateurautre";
+        align-items: center;
+        justify-content: center;
+        
+    }
     
 }
-
-
-
