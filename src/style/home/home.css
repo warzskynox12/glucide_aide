@@ -25,8 +25,17 @@
     height: 100vh;
 }
 
+@media  screen and (max-width: 1024px) {
+    .sign{
+        margin-top: 40vh;
+    }
+    
+}
+
+
 @media screen and (max-width: 768px) {
     .titre-home{
         margin-top: 30px;
     } 
+
 }
