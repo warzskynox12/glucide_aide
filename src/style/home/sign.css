@@ -1,5 +1,7 @@
 .sign-in{
     display: grid;
+    justify-content: center;
+    align-items: center;
     grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:  "prenom" "nom"  "mail1" "password1" "confirm-password" "file" "se-connecter" "sign-google"; 
     gap: 20px;

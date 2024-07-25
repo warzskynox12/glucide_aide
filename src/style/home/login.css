@@ -1,6 +1,8 @@
 .login{
     display:grid;
     width: 80vw; 
+    justify-content: center;
+    align-items: center;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 20px;
     grid-template-areas: "mail2" "password2" "se-connecter1" "sign-google1";
