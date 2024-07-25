@@ -1,0 +1,38 @@
+.sign-in{
+    display: grid;
+    grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:  "prenom" "nom"  "mail1" "password1" "confirm-password" "file" "se-connecter" "sign-google"; 
+    gap: 20px;
+    width: 80vw;   
+}
+.prénom{grid-area: prenom;}
+.nom{grid-area: nom;}
+.mail1{grid-area: mail1;}
+.password1{grid-area: password1;}
+.passwordconfirm{grid-area: confirm-password;}
+.file{
+    grid-area: file;
+    border: 1px solid black;
+}
+.se-connecter{grid-area: se-connecter;}
+.sign-google{grid-area: sign-google;}
+.connection{ 
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.connection button{
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 80vw;
+    height: 60px;
+    font-size: 20px;
+}
+.mail1, .password1, .se-connecter, .nom, .prénom, .passwordconfirm, .file, .sign-google{
+    height: 60px;
+    border-radius: 20px;
+    color: black;
+    font-size: 20px;
+}

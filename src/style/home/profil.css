@@ -1,0 +1,120 @@
+.profil{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-top: 20vh;
+    align-items: center;
+}
+.sign{
+    justify-content:start;
+}
+.mprofil{
+    grid-area: mprofil;
+}
+.mnom{
+    grid-area: mnom;
+}
+.mdp{
+    grid-area: mdp;
+}
+.adressemail{
+    grid-area: adressemail;
+    
+}
+.assogoogle{
+    grid-area: assogoogle;
+}
+.assogoogle1{
+    grid-area: assogoogle1;
+}
+.infoutilisateur{
+    grid-area: infoutilisateur;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.infoutilisateurimg{
+    grid-area: infoutilisateurimg;
+    width: 100%;
+}
+.infoutilisateurimg img{
+    border-radius: 50%;
+}
+
+.infoutilisateurautre{
+    grid-area: infoutilisateurautre;
+}
+
+.infoutilisateur, .adressemail,.assogoogle , .mdp, .mnom, .mprofil{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: black;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.titre-infoutilisateur{
+    grid-area: titre-infoutilisateur;
+}
+.titre-mprofil{
+    grid-area: titre-mprofil;
+}
+.titre-mnom{
+    grid-area: titre-mnom;
+}
+.titre-mdp{
+    grid-area: titre-mdp;
+}
+.titre-adressemail{
+    grid-area: titre-adressemail;
+    
+}
+.titre-assogoogle{
+    grid-area: titre-assogoogle;
+}
+
+.titre-adressemail, .titre-assogoogle, .titre-mdp, .titre-mnom, .titre-mprofil, .titre-infoutilisateur{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 10px;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: black;
+    height: auto;
+    cursor: default;
+    user-select: none;
+}
+.adressemail p, .assogoogle p, .mdp p, .mnom p, .mprofil p, .infoutilisateur p{
+    display: flex;
+    margin: 16px;
+    flex-direction: column;
+    width: 80vw;
+}
+.titre-adressemail p, .titre-assogoogle p, .titre-mdp p, .titre-mnom p, .titre-mprofil p, .titre-infoutilisateur p{
+    display: flex;
+    margin: 16px;
+    flex-direction: column;
+    width: 80vw;
+}
+
+.infoutilisateur1{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:  "infoutilisateurimg infoutilisateurautre";
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .profil{
+        margin-top: 10vh;
+    }
+    
+}
+

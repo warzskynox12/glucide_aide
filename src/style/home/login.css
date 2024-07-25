@@ -1,0 +1,17 @@
+.login{
+    display:grid;
+    width: 80vw; 
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    grid-template-areas: "mail2" "password2" "se-connecter1" "sign-google1";
+}
+.mail2{grid-area: mail2;}
+.password2{grid-area: password2;}
+.se-connecter1{grid-area: se-connecter1;}
+.sign-google1{grid-area: sign-google1;}
+.mail2, .password2, .se-connecter1, .sign-google1{
+    height: 60px;
+    border-radius: 20px;
+    color: black;
+    font-size: 20px;
+}
