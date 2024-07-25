@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Menu from '../menu/menu';
 import '../../style/home/home.css';
 import Sign from './sign';
-import Loginnn from './login';
+import Login from './login';
 import firebase from '../firebasse/firebasse';
 import Profil from './profil';
 
