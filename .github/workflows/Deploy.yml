@@ -1,6 +1,8 @@
 name: Deploy
 permissions:
   contents: write
+  id-token: write
+  pages: write
 
 on:
   push:
