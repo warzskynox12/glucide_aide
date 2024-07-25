@@ -4,7 +4,7 @@ import firebase from '../firebasse/firebasse';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from 'uuid';
 import { getAuth, updateProfile } from "firebase/auth";
-import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
 import '../../style/home/profil.css';
 
 
@@ -236,6 +236,44 @@ const profil = () => {
         }
     }
     , []);
+    //faire apparaitre et disparaitre les informations de l'utilisateur
+    useEffect(() => {
+        const titre = document.getElementById('titre-delete');
+        if (titre) {
+            const toggleDelete = () => {
+                var x = document.getElementById('delete');
+                if (x.style.display === 'flex') {
+                    x.style.display = 'none';
+                } else {
+                    x.style.display = 'flex';
+                }
+            };
+            titre.addEventListener('click', toggleDelete);
+            // Nettoyage de l'écouteur d'événements
+            return () => {
+                titre.removeEventListener('click', toggleDelete);
+            };
+        }
+    }, []);
+    //faire apparaitre et disparaitre les informations de l'utilisateur
+    useEffect(() => {
+        const titre = document.getElementById('titre-deconnexion');
+        if (titre) {
+            const toggleDeconnexion = () => {
+                var x = document.getElementById('deconnexion');
+                if (x.style.display === 'flex') {
+                    x.style.display = 'none';
+                } else {
+                    x.style.display = 'flex';
+                }
+            };
+            titre.addEventListener('click', toggleDeconnexion);
+            // Nettoyage de l'écouteur d'événements
+            return () => {
+                titre.removeEventListener('click', toggleDeconnexion);
+            };
+        }
+    }, []);
 
     return (
         <div className='profil'>
@@ -312,6 +350,44 @@ const profil = () => {
                 <p>
                     <input type="file" onChange={handleFileChange} />
                     <button onClick={handleClick}>Télécharger l'image de profil</button>
+                </p>
+            </div>
+            <h2 id='titre-delete' className='titre-delete'><p>Supprimer le compte</p></h2>
+            <div id='delete' className='delete'>
+                <p>
+                <button onClick={() => {
+                    if (window.confirm('Voulez-vous vraiment supprimer votre compte ?')) {
+                        
+                        firebase.firestore().collection('users').doc(user.uid).delete().then(() => {
+                            console.log(user.uid);
+                            console.log('Document utilisateur supprimé avec succès !');
+                        }).catch((error) => {
+                            setError(error.message);
+                            console.error(error.message);
+                        });
+                        firebase.auth().currentUser.delete().then(() => {
+                            console.log('Compte supprimé avec succès !');
+                            navigate('/glucide_aide/');
+                        }).catch((error) => {
+                            setError(error.message);
+                            console.error(error.message);
+                        });
+                    }
+                }}>Supprimer le compte</button>
+                </p>
+            </div>
+            <h2 id='titre-deconnexion' className='titre-deconnexion'><p>Déconnexion</p></h2>
+            <div id='deconnexion' className='deconnexion'>
+                <p>
+                <button onClick={() => {
+                    firebase.auth().signOut().then(() => {
+                        console.log('Déconnexion réussie !');
+                        navigate('/glucide_aide/');
+                    }).catch((error) => {
+                        setError(error.message);
+                        console.error(error.message);
+                    });
+                }}>Déconnexion</button>
                 </p>
             </div>
         </div>
