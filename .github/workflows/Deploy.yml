@@ -48,6 +48,9 @@ jobs:
           name: production-files
           path: ./dist
 
+      - name: Create CNAME file
+        run: echo 'https://glucide-aide.skynox12.ovh' > ./dist/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
