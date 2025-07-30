@@ -15,7 +15,7 @@ function Ratio() {
             if (user) {
                 fetchData(user.uid);
             } else {
-                window.location.href = '/glucide_aide/';
+                window.location.href = '/';
             }
         });
 
@@ -54,7 +54,7 @@ function Ratio() {
         if (Object.keys(updates).length > 0) {
             try {
                 await firebase.firestore().collection('ratio').doc(user.uid).update(updates);
-                window.location.href = '/glucide_aide/ratio';
+                window.location.href = '/ratio';
             } catch (error) {
                 console.error("Error updating document: ", error);
             }

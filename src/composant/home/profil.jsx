@@ -367,7 +367,7 @@ const profil = () => {
                         });
                         firebase.auth().currentUser.delete().then(() => {
                             console.log('Compte supprimé avec succès !');
-                            navigate('/glucide_aide/');
+                            navigate('/');
                         }).catch((error) => {
                             setError(error.message);
                             console.error(error.message);
@@ -382,7 +382,7 @@ const profil = () => {
                 <button onClick={() => {
                     firebase.auth().signOut().then(() => {
                         console.log('Déconnexion réussie !');
-                        navigate('/glucide_aide/');
+                        navigate('/');
                     }).catch((error) => {
                         setError(error.message);
                         console.error(error.message);

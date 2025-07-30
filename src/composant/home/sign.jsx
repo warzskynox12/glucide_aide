@@ -57,7 +57,7 @@ const Sign = () => {
             });
           }
       console.log('Inscription réussie !');
-      window.location.href = '/glucide_aide/';
+      window.location.href = '/';
       } catch (error) {
         setError(error.message);
         console.error(error.message);

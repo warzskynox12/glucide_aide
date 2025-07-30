@@ -15,7 +15,7 @@ const Login = () => {
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
       console.log('Connexion réussie !');
-      window.location.href = '/glucide_aide/';
+      window.location.href = '/';
     } catch (error) {
       setError(error.message);
       console.error(error.message);
@@ -31,7 +31,7 @@ const Login = () => {
       const provider = new firebase.auth.GoogleAuthProvider();
       await firebase.auth().signInWithPopup(provider);
       console.log('Connexion réussie avec Google !');
-      window.location.href = '/glucide_aide/';
+      window.location.href = '/';
     } catch (error) {
       setError(error.message);
       console.error(error.message);

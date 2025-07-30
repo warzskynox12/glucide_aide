@@ -13,7 +13,7 @@ function Historique() {
             if (user) {
                 fetchHistorique(user.uid); 
             } else {
-                window.location.href = '/glucide_aide/';
+                window.location.href = '/';
             }
         });
 
