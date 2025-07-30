@@ -11,7 +11,7 @@ function Historique() {
     useEffect(() => {
         const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
             if (user) {
-                fetchHistorique(user.uid);
+                fetchHistorique(user.uid); 
             } else {
                 window.location.href = '/glucide_aide/';
             }

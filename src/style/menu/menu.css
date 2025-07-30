@@ -42,7 +42,6 @@
         display: grid;
         width: 100%;
         max-width: 100%;
-        gap : 20px;
         grid-template-columns:20px repeat(4, 1fr) 20px;
         grid-template-areas: "case case1 case2 case3 case4 case5";
     }
@@ -82,7 +81,6 @@
         border: 1px solid black;
         border-radius: 20px;
         margin-top: 50px;
-        margin-bottom: 50px;
         margin-left: 10px;
         margin-right: 10px;
         height: 60px;
