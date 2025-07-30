@@ -18,10 +18,10 @@ const Menu = () => {
                 </button>
                 <div className={menuOuvert ? "menu menu-ouvert" : "menu"}>
                     <div className='menu-list'>
-                        <Link to="/glucide_aide/" className='case1'>Home</Link>
-                        <Link to="/glucide_aide/Ratio" className='case2'>Ratio</Link>
-                        <Link to="/glucide_aide/Calculette" className='case3'>Calculette</Link>
-                        <Link to="/glucide_aide/Historique" className='case4'>Historique</Link>
+                        <Link to="/" className='case1'>Home</Link>
+                        <Link to="/Ratio" className='case2'>Ratio</Link>
+                        <Link to="/Calculette" className='case3'>Calculette</Link>
+                        <Link to="/Historique" className='case4'>Historique</Link>
                     </div>
                 </div>
             </div> 
