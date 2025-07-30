@@ -9,10 +9,10 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/glucide_aide/" element={<Home />} />
-          <Route path="/glucide_aide/Ratio" element={<Ratio />} />
-          <Route path="/glucide_aide/Calculette" element={<Calculette />} />
-          <Route path="/glucide_aide/Historique" element={<Historique />} />
+          <Route path="" element={<Home />} />
+          <Route path="/Ratio" element={<Ratio />} />
+          <Route path="/Calculette" element={<Calculette />} />
+          <Route path="/Historique" element={<Historique />} />
         </Routes>
       </div>
     </Router>
