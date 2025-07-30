@@ -53,10 +53,16 @@ function Ratio() {
 
         if (Object.keys(updates).length > 0) {
             try {
-                await firebase.firestore().collection('ratio').doc(user.uid).update(updates);
+                const docRef = firebase.firestore().collection('ratio').doc(user.uid);
+                const docSnap = await docRef.get();
+                if (docSnap.exists) {
+                    await docRef.update(updates);
+                } else {
+                    await docRef.set(updates);
+                }
                 window.location.href = '/ratio';
             } catch (error) {
-                console.error("Error updating document: ", error);
+                console.error("Error saving document: ", error);
             }
         }
     };
