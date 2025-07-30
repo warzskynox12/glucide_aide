@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Menu from '../menu/menu';
 import '../../style/ratio/ratio.css';
 import firebase from '../firebasse/firebasse';
+import { Navigate } from 'react-router-dom';
 
 function Ratio() {
+    const navigate = useNavigate();
     const [bolusma, setBolusma] = useState('');
     const [bolusmi, setBolusmi] = useState('');
     const [bolusgo, setBolusgo] = useState('');
@@ -15,7 +18,7 @@ function Ratio() {
             if (user) {
                 fetchData(user.uid);
             } else {
-                window.location.href = '/';
+                navigate('/');
             }
         });
 
@@ -28,10 +31,7 @@ function Ratio() {
             if (doc.exists) {
                 const data = doc.data();
                 setInitialData(data);
-                setBolusma(data.bolusma || '');
-                setBolusmi(data.bolusmi || '');
-                setBolusgo(data.bolusgo || '');
-                setBolusso(data.bolusso || '');
+                // NE PAS vider les inputs ici !
             }
         } catch (error) {
             console.error("Error fetching data: ", error);
@@ -60,12 +60,17 @@ function Ratio() {
                 } else {
                     await docRef.set(updates);
                 }
-                window.location.href = '/ratio';
+                await fetchData(user.uid); // Rafraîchir l'affichage
+                setBolusma('');
+                setBolusmi('');
+                setBolusgo('');
+                setBolusso('');
             } catch (error) {
                 console.error("Error saving document: ", error);
             }
         }
     };
+    
 
     return (
     <div className='ratio-container'>
@@ -81,6 +86,7 @@ function Ratio() {
             pattern="[0-9]+(\.[0-9]+)?"
             title="Veuillez entrer un nombre valide (chiffres et point décimal)"
             placeholder="Bolus Matin"
+            value={bolusma}
             onChange={(e) => setBolusma(e.target.value)}
         />
         <div className="ratio-value" id="bolusmatin">ratio matin : {initialData.bolusma} ml/dl</div>
@@ -95,6 +101,7 @@ function Ratio() {
             pattern="[0-9]+(\.[0-9]+)?"
             title="Veuillez entrer un nombre valide (chiffres et point décimal)"
             placeholder="Bolus Midi"
+            value={bolusmi}
             onChange={(e) => setBolusmi(e.target.value)}
         />
         <div className="ratio-value" id="bolusmidi">ratio midi : {initialData.bolusmi} ml/dl</div>
@@ -109,6 +116,7 @@ function Ratio() {
             pattern="[0-9]+(\.[0-9]+)?"
             title="Veuillez entrer un nombre valide (chiffres et point décimal)"
             placeholder="Bolus Goûter"
+            value={bolusgo}
             onChange={(e) => setBolusgo(e.target.value)}
         />
         <div className="ratio-value" id="bolusgouter">ratio goûter : {initialData.bolusgo} ml/dl</div>
@@ -123,6 +131,7 @@ function Ratio() {
             pattern="[0-9]+(\.[0-9]+)?"
             title="Veuillez entrer un nombre valide (chiffres et point décimal)"
             placeholder="Bolus Soir"
+            value={bolusso}
             onChange={(e) => setBolusso(e.target.value)}
         />
         <div className="ratio-value" id="bolussoir">ratio soir : {initialData.bolusso} ml/dl</div>
